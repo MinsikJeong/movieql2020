@@ -1,3 +1,24 @@
+type RealMovie {
+  id: Int!
+  title: String!
+  rating: Float!
+  summary: String!
+  language: String!
+  medium_cover_image: String!
+}
+
+type Movie {
+  id: Int!
+  name: String!
+  score: Int!
+}
+
 type Query {
-  myName: String!  
+  movies: [RealMovie]!
+  movie(id: Int!): Movie
+}
+
+type Mutation {
+  addMovie(name: String!, score: Int!): Movie!
+  deleteMovie(id: Int!) : Boolean!
 }
